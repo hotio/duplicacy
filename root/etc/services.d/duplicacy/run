@@ -3,5 +3,4 @@
 
 umask "${UMASK}"
 
-# shellcheck disable=SC2086
-HOME="${APP_DIR}" exec s6-setuidgid hotio "${APP_DIR}/duplicacy_web" ${ARGS}
+HOME="${APP_DIR}" exec s6-setuidgid hotio "${APP_DIR}/duplicacy_web"
