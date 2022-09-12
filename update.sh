@@ -29,5 +29,6 @@ elif [[ ${1} == "screenshot" ]]; then
 else
     version=$(curl -fsSL "https://duplicacy.com/latest_web_version" | jq -r .stable)
     [[ -z ${version} ]] && exit 1
-    echo '{"version":"'"${version}"'"}' | jq . > VERSION.json
+    version_json=$(cat ./VERSION.json)
+    jq '.version = "'"${version}"'"' <<< "${version_json}" > VERSION.json
 fi
