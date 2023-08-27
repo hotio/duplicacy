@@ -13,4 +13,3 @@ RUN curl -fsSL "https://acrosync.com/duplicacy-web/duplicacy_web_linux_x64_${VER
     chmod 755 "${APP_DIR}/duplicacy_web"
 
 COPY root/ /
-RUN chmod -R +x /etc/cont-init.d/ /etc/services.d/
