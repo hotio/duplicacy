@@ -11,12 +11,12 @@
   },
   "testing": {
     "description": "Latest",
-    "last_updated": "2024-01-07T05:47:48.113Z",
+    "last_updated": "2024-01-23T10:03:09.720Z",
     "latest": false,
     "tags": [
       "testing",
       "testing-1.7.2",
-      "testing-602b533"
+      "testing-e6ec1ce"
     ]
   }
 }
