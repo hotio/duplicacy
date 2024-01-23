@@ -5,26 +5,11 @@ umask "${UMASK}"
 
 echo "
 ----------------------------------------------------------------------
-ENVIRONMENT
+ENVIRONMENT APP
 ----------------------------------------------------------------------
-PUID=${PUID}
-PGID=${PGID}
-UMASK=${UMASK}
-TZ=${TZ}
+
 ----------------------------------------------------------------------
 "
-
-echo "Executing usermod..."
-mkdir "/tmp/temphome"
-usermod -d "/tmp/temphome" hotio
-usermod -o -u "${PUID}" hotio
-usermod -d "${CONFIG_DIR}" hotio
-rm -rf "/tmp/temphome"
-groupmod -o -g "${PGID}" hotio
-
-echo "Applying permissions to ${CONFIG_DIR}"
-chmod "=rwx" "${CONFIG_DIR}"
-chown hotio:hotio "${CONFIG_DIR}"
 
 echo "Applying permissions to /cache"
 chmod "=rwx" "/cache"
