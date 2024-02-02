@@ -1,12 +1,12 @@
 {
   "release": {
     "description": "Stable",
-    "last_updated": "2024-02-02T21:13:10.460Z",
+    "last_updated": "2024-02-02T22:20:58.713Z",
     "latest": true,
     "tags": [
       "release",
       "release-1.7.2",
-      "release-b04ee30"
+      "release-0166ded"
     ]
   },
   "testing": {
