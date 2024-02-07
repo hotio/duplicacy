@@ -1,6 +1,7 @@
 #!/bin/bash
-
-version=$(curl -fsSL "https://duplicacy.com/latest_web_version" | jq -r .latest)
-[[ -z ${version} ]] && exit 0
-version_json=$(cat ./VERSION.json)
-jq '.version = "'"${version}"'"' <<< "${version_json}" > VERSION.json
+set -e
+version=$(curl -fsSL "https://duplicacy.com/latest_web_version" | jq -re .latest)
+json=$(cat VERSION.json)
+jq --sort-keys \
+    --arg version "${version//v/}" \
+    '.version = $version' <<< "${json}" | tee VERSION.json
