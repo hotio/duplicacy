@@ -13,15 +13,15 @@ ENVIRONMENT APP
 
 echo "Applying permissions to /cache"
 chmod "=rwx" "/cache"
-chown hotio:hotio "/cache"
+find "/cache" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 
 echo "Applying permissions to /logs"
 chmod "=rwx" "/logs"
-chown hotio:hotio "/logs"
+find "/logs" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 
 if [[ ! -f "${CONFIG_DIR}/machine-id" ]]; then
     tr -dc 'a-f0-9' < /dev/urandom | fold -w 32 | head -n 1 > "${CONFIG_DIR}/machine-id"
-    chown hotio:hotio "${CONFIG_DIR}/machine-id"
+    find "${CONFIG_DIR}/machine-id" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
 
 if [[ ! -f "${CONFIG_DIR}/settings.json" ]]; then
@@ -30,10 +30,10 @@ if [[ ! -f "${CONFIG_DIR}/settings.json" ]]; then
         "log_directory"         : "/logs",
         "temporary_directory"   : "/cache"
     }' > "${CONFIG_DIR}/settings.json"
-    chown hotio:hotio "${CONFIG_DIR}/settings.json"
+    find "${CONFIG_DIR}/settings.json" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
 
 if [[ ! -f "${CONFIG_DIR}/duplicacy.json" ]]; then
     echo '{}' > "${CONFIG_DIR}/duplicacy.json"
-    chown hotio:hotio "${CONFIG_DIR}/duplicacy.json"
+    find "${CONFIG_DIR}/duplicacy.json" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
