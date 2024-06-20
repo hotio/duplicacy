@@ -2,13 +2,13 @@
   "release": {
     "description": "Stable",
     "hide": false,
-    "last_updated": "2024-06-07T16:25:39.000Z",
-    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/9419989917",
+    "last_updated": "2024-06-20T19:20:58.000Z",
+    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/9603021439",
     "latest": true,
     "tags": [
       "release",
       "release-1.7.2",
-      "release-6efa912"
+      "release-0dfd333"
     ]
   },
   "testing": {
