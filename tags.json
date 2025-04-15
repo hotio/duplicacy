@@ -2,13 +2,13 @@
   "release": {
     "description": "Stable",
     "hide": false,
-    "last_updated": "2025-04-15T12:23:31.000Z",
-    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/14469194835",
+    "last_updated": "2025-04-15T13:07:47.000Z",
+    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/14470020309",
     "latest": true,
     "tags": [
       "release",
       "release-1.8.0",
-      "release-ced45af"
+      "release-f03d95a"
     ]
   },
   "testing": {
