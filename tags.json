@@ -14,13 +14,13 @@
   "testing": {
     "description": "Latest",
     "hide": false,
-    "last_updated": "2025-08-17T18:44:18.000Z",
-    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/17024445365",
+    "last_updated": "2025-08-23T20:31:47.000Z",
+    "last_updated_url": "https://github.com/hotio/duplicacy/actions/runs/17179761221",
     "latest": false,
     "tags": [
       "testing",
       "testing-1.8.3",
-      "testing-3ab0569"
+      "testing-6a97bb8"
     ]
   }
 }
