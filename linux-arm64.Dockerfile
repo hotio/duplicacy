@@ -5,7 +5,7 @@ FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
 EXPOSE 3875
 VOLUME ["/cache","/logs"]
 ARG IMAGE_STATS
-ENV IMAGE_STATS=${IMAGE_STATS} WEBUI_PORTS="3875/tcp,3875/udp"
+ENV IMAGE_STATS=${IMAGE_STATS} WEBUI_PORTS="3875/tcp"
 
 RUN mkdir "/var/lib/dbus" && ln -s "${CONFIG_DIR}/machine-id" "/var/lib/dbus/machine-id" && \
     ln -s "${CONFIG_DIR}/" "${APP_DIR}/.duplicacy-web"
