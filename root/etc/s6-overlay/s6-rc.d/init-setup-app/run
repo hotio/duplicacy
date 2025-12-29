@@ -1,6 +1,11 @@
 #!/command/with-contenv bash
 # shellcheck shell=bash
 
+# shellcheck source=/dev/null
+source /etc/s6-overlay/scripts/bash-functions
+
+set -e
+
 umask "${UMASK}"
 
 echo "
@@ -11,12 +16,10 @@ WEBUI_PORTS=${WEBUI_PORTS}
 ----------------------------------------------------------------------
 "
 
-echo "Applying permissions to /cache"
-chmod "=rwx" "/cache"
+log_inf "Taking ownership of [/cache]."
 find "/cache" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 
-echo "Applying permissions to /logs"
-chmod "=rwx" "/logs"
+log_inf "Taking ownership of [/logs]."
 find "/logs" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 
 if [[ ! -f "${CONFIG_DIR}/machine-id" ]]; then

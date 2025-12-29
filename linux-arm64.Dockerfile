@@ -15,3 +15,4 @@ RUN curl -fsSL "https://acrosync.com/duplicacy-web/duplicacy_web_linux_arm64_${V
     chmod 755 "${APP_DIR}/duplicacy_web"
 
 COPY root/ /
+RUN find /etc/s6-overlay/s6-rc.d -name "run*" -execdir chmod +x {} +
