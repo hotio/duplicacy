@@ -23,6 +23,7 @@ log_inf "Taking ownership of [/logs]."
 find "/logs" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 
 if [[ ! -f "${CONFIG_DIR}/machine-id" ]]; then
+    log_inf "Creating [${CONFIG_DIR}/machine-id] file."
     tr -dc 'a-f0-9' < /dev/urandom | fold -w 32 | head -n 1 > "${CONFIG_DIR}/machine-id"
     find "${CONFIG_DIR}/machine-id" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
