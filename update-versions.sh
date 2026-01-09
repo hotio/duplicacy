@@ -1,5 +1,7 @@
 #!/bin/bash
-version=$(curl -fsSL "https://duplicacy.com/latest_web_version" | jq -re .stable) || exit 1
+set -exuo pipefail
+
+version=$(curl -fsSL "https://duplicacy.com/latest_web_version" | jq -re .stable)
 json=$(cat VERSION.json)
 jq --sort-keys \
     --arg version "${version//v/}" \
