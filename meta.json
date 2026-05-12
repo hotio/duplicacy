@@ -1,6 +1,5 @@
 {
   "description": "Latest",
-  "packages_hash": "d7ecd2a5dcbcf90568a1dc8382882f4bb9529c73",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:3875",
